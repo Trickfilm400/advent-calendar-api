@@ -9,7 +9,7 @@ class Result {
 
     public function __construct(mixed $json) {
         $this->json = $json;
-        $this->data = $json["data"];
+        $this->data = $json["data"] ?? null;
         $this->day = $this->getDay();
     }
 

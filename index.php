@@ -7,7 +7,12 @@ include_once __DIR__ . "/Result.php";
 
 //configure jsonFile class
 $storageFilePaths = __DIR__ . "/storage/";
-$jsonFileHandler = new JSONFile("test.json", $storageFilePaths);
+//create folder if the folder did not exist
+if (!file_exists($storageFilePaths)) {
+    mkdir($storageFilePaths, 0777, true);
+}
+//create JSONFile class instance
+$jsonFileHandler = new JSONFile("advent.json", $storageFilePaths);
 
 //fetch result from data
 $res = new Result($jsonFileHandler->getJson());
