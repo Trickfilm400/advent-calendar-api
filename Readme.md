@@ -13,15 +13,15 @@ This project is designed to be configured for different data storages in the **f
 2. the `index.php``file is the main entrypoint, so point every single request to this file!
 3. For jsonFile usage:
    1. in the `storage` folder put a file named `advent.json` (will be auto-generated on the first request, if it didn't exist)
-   2. the json file has the following structure:
+   2. the json file has the following structure (you can configure objects, strings, etc.):
 
 ```json
 {
   "data": [
-    {"key": "value"},
+    {"key": 123},
     {"key2": "value2"},
-    {"key3": "value3"},
-    {"key4": "value4"}
+    {"key3": {"object": 1, "test": 2}},
+    {"key4": "value4", "key5": "value5"}
   ]
 }
 ```
