@@ -26,6 +26,8 @@ $res = new Result($jsonFileHandler->getJson());
 $returnData = array(
     "data" => $res->getDataFromArray()
 );
+//set header to be json
+header('Content-Type: application/json; charset=utf-8');
 
 //just echo out the data
 echo json_encode($returnData);
