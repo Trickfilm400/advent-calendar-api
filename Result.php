@@ -3,11 +3,11 @@
 
 class Result {
     const MAX_RESULT_DAYS = 25;
-    private mixed $json;
+    private $json;
     private int $day;
-    private mixed $data;
+    private $data;
 
-    public function __construct(mixed $json) {
+    public function __construct($json) {
         $this->json = $json;
         $this->data = $json["data"] ?? null;
         $this->day = $this->getDay();
@@ -22,7 +22,7 @@ class Result {
         return (int) date("j");
     }
 
-    public function getDataFromArray(): array {
+    public function getDataFromArray() {
         $resultArray = array();
         for ($i = 0; $i < $this->day; $i++) {
             //skip if no data is available
@@ -36,7 +36,7 @@ class Result {
      * OVERWRITE DAYS FOR TESTING
      * @param int $day
      */
-    public function setDay(int $day): void {
+    public function setDay(int $day) {
         $this->day = $day;
     }
 }
