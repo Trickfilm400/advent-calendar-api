@@ -4,7 +4,7 @@
 class Result {
     const MAX_RESULT_DAYS = 25;
     private $json;
-    private int $day;
+    private $day;
     private $data;
 
     public function __construct($json) {
