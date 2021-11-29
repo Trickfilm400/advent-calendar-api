@@ -5,7 +5,7 @@ class JSONFile {
      * @var false|resource
      */
     private $file;
-    private mixed $json;
+    private $json;
 
     public function __construct(string $fileName, string $filePath) {
         $this->file = file_get_contents($filePath . $fileName);
@@ -22,7 +22,7 @@ class JSONFile {
     /**
      * @return mixed
      */
-    public function getJson(): mixed {
+    public function getJson() {
         if (isset($this->json))
             return $this->json;
         return null;
