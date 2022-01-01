@@ -16,8 +16,8 @@ $jsonFileHandler = new JSONFile("advent.json", $storageFilePaths);
 
 //fetch result from data
 $res = new Result($jsonFileHandler->getJson());
-//OPTIONAL: Overwrite days
-//$res->setDay(31);
+//DEPRECATED: Overwrite days
+//$res->setDay(23);
 
 //debug thing:
 //var_dump($res->getDataFromArray());
