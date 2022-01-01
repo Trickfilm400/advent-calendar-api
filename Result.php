@@ -14,6 +14,11 @@ class Result {
     }
 
     private function getDay(): int {
+        //check for overwrite
+        if (isset($this->json["overwriteDay"])) {
+            return (int) $this->json["overwriteDay"];
+        }
+        //or generate date
         $month = (int) date("n");
         //month between 1-6 -> day 25
         if ($month <= 6 && $month >= 1) return self::MAX_RESULT_DAYS;
@@ -35,6 +40,7 @@ class Result {
     /**
      * OVERWRITE DAYS FOR TESTING
      * @param int $day
+     * @deprecated Use "overwriteDay" in the json config
      */
     public function setDay(int $day): void {
         $this->day = $day;
